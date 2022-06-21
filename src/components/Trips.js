@@ -5,9 +5,9 @@ export default function Trips({ trips, deleteItem }) {
     return (
         <section>
             <div>
-                <h2>Travel Diaries</h2>
+                <h2 className="heading">Travel Diaries</h2>
             </div>
-            <div>
+            <div className="trips-container">
                 {trips.map((trip) => {
                     return (
                         <Trip

@@ -6,6 +6,7 @@ import Trips from "./components/Trips";
 function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [trips, setTrips] = useState([]);
+
     async function getContent() {
         setIsLoading(true);
         try {
@@ -24,33 +25,32 @@ function App() {
     useEffect(() => {
       getContent();
     }, [])
-    
 
     function deleteItem(id) {
-      const updatedTrips = trips.filter((trip) => trip.id !== id);
-      setTrips(updatedTrips);
+        const updatedTrips = trips.filter((trip) => trip.id !== id);
+        setTrips(updatedTrips);
     }
 
-    if(isLoading) {
-      return(
-        <div className="loading">
-          <h1>Loading...</h1>
-        </div>
-      );
+    if (isLoading) {
+        return (
+            <div className="loading">
+                <h1>Loading...</h1>
+            </div>
+        );
     }
 
-    if(trips.length === 0) {
-      return (
-          <div>
-              <h2>Travel Diaries</h2>
-              <button onClick={getContent}>Refresh</button>
-          </div>
-      );
+    if (trips.length === 0) {
+        return (
+            <div>
+                <h2 className="heading">Travel Diaries</h2>
+                <button onClick={getContent} className="btn-refresh">
+                    Refresh
+                </button>
+            </div>
+        );
     }
 
-    return(
-      <Trips trips={trips} deleteItem={deleteItem}></Trips>
-    );
+    return <Trips trips={trips} deleteItem={deleteItem}></Trips>;
 }
 
 export default App;

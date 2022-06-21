@@ -13,15 +13,22 @@ export default function Trip({id, name, info, image, price, deleteItem}) {
             <img src={image} alt={name} className="cover-image" />
             <div className="content-wrapper">
                 <h2>{name}</h2>
-                <h3>{price}</h3>
+                <h3 className="price">{price}</h3>
                 <p>
                     {readMore ? `${info.substring(0, 200)}...` : info}
-                    <button onClick={toggleView}>
+                    <button className="readmore" onClick={toggleView}>
                         {readMore ? "read more" : "show less"}
                     </button>
                 </p>
             </div>
-            <button onClick={()=> {deleteItem(id)}}>Not interested</button>
+            <button
+                onClick={() => {
+                    deleteItem(id);
+                }}
+                className="delete"
+            >
+                Not interested
+            </button>
         </article>
     );
 }
