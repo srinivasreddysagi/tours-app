@@ -13,7 +13,6 @@
 }
 
 body {
-    margin: 0;
     font-family: var(--font-page);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,7 +67,7 @@ code {
     display: flex;
     margin: auto;
     border: 0;
-    padding: 0.5rem 1rem;
+    padding: 0rem;
     font-size: 1.4rem;
     color: #fff;
     border-radius: 8px;
@@ -76,10 +75,9 @@ code {
 }
 
 .trips-container {
-    width: 95%;
+    width: 100%;
     margin: auto;
     margin-bottom: 2rem;
-    padding: 0.5rem;
     max-width: 42rem;
     display: flex;
     flex-direction: column;
@@ -88,20 +86,21 @@ code {
 
 .trip {
     background-color: var(--item-bg);
-    width: 95%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem;
+    padding: 1rem 0.6rem;
     border-radius: 8px;
     box-shadow: 0px 4px 10px 0px hsl(133.47, 100%, 90.39%);
 }
 
 .cover-image {
-    width: 98%;
+    width: 100%;
     max-width: 40rem;
+    margin: auto;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
