@@ -1,7 +1,7 @@
-import { isContentEditable } from "@testing-library/user-event/dist/utils";
 import { useState, useEffect } from "react";
-import "./App.css";
 import Trips from "./components/Trips";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { HiRefresh } from "react-icons/hi";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,8 +23,8 @@ function App() {
     }
 
     useEffect(() => {
-      getContent();
-    }, [])
+        getContent();
+    }, []);
 
     function deleteItem(id) {
         const updatedTrips = trips.filter((trip) => trip.id !== id);
@@ -35,16 +35,17 @@ function App() {
         return (
             <div className="loading">
                 <h1>Loading...</h1>
+                <AiOutlineLoading3Quarters className="load-rotate" />
             </div>
         );
     }
 
     if (trips.length === 0) {
         return (
-            <div>
-                <h2 className="heading">Travel Diaries</h2>
+            <div className="refresh">
+                <p>You're All Caught Up!</p>
                 <button onClick={getContent} className="btn-refresh">
-                    Refresh
+                    <HiRefresh />
                 </button>
             </div>
         );
